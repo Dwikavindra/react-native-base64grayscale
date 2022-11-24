@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "FA0EFF5F236CC8FB00069FA8"
-               BuildableName = "libRNModuleTemplateModule.a"
-               BlueprintName = "RNModuleTemplateModule"
-               ReferencedContainer = "container:RNModuleTemplateModule.xcodeproj">
+               BuildableName = "libRNBase64GrayscaleModule.a"
+               BlueprintName = "RNBase64GrayscaleModule"
+               ReferencedContainer = "container:RNBase64GrayscaleModule.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -51,9 +51,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FA0EFF5F236CC8FB00069FA8"
-            BuildableName = "libRNModuleTemplateModule.a"
-            BlueprintName = "RNModuleTemplateModule"
-            ReferencedContainer = "container:RNModuleTemplateModule.xcodeproj">
+            BuildableName = "libRNBase64GrayscaleModule.a"
+            BlueprintName = "RNBase64GrayscaleModule"
+            ReferencedContainer = "container:RNBase64GrayscaleModule.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>
