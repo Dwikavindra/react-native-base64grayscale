@@ -16,66 +16,55 @@ npm i react-native-base64grayscale
 
 ## Usage
 
-To use the following package all you need is to import the following 
+To use the following package all you need is to import the following
 
 ```jsx
 import RNBase64GrayscaleModule from 'react-native-base64grayscale'
 ```
 
-From there, there are 2 functions you can use 
+From there, there are 2 functions you can use
 
 `RNBase64GrayscaleModule.base64Coloredtobase64GrayScale`
 
-| Parameters | Required | Type | Description |
-| --- | --- | --- | --- |
-| base64 | required | string | the base64 string of the image. The prefix data:image/[format];base64, must not be inputted  |
-| width | required | Int | Image Width  |
-| height | required | Int | Image Height |
-| callback | required  | Callback | Used to gain result from the function. Would return a string. Example below |
+| Parameters | Required | Type   | Description                                                                                 |
+| ---------- | -------- | ------ | ------------------------------------------------------------------------------------------- |
+| base64     | required | string | the base64 string of the image. The prefix data:image/[format];base64, must not be inputted |
 
 Code example:
 (Note: image here is a base64 data of an image)
 
 ```tsx
-RNBase64GrayscaleModule.base64Coloredtobase64Grayscale(
-      image,
-      933,
-      633,
-      (encoded: String) => {
-        console.log(encoded);
-		    // can use setState or any other method here
-      }
-    )
+const greyscale = async () => {
+  greyscaleImage = await RNBase64GrayscaleModule.base64Coloredtobase64Grayscale(
+    image
+  )
+}
 ```
 
-The function can take any image format either png or jpeg, however it will convert to JPEG so make sure to use the prefix `data:image/jpeg;base64,` to use it in an image.
+The function can take any image format either png or jpeg, however it will convert to JPEG so make sure to use the prefix `data:image/jpeg;base64,` to use it in an image. Make sure that it is greyscaled beforehand for a better result
 
 `RNBase64GrayscaleModule.base64tobinaryString`
 
-| Parameters | Required | Type | Description |
-| --- | --- | --- | --- |
-| base64 | required | string | the base64 string of the image. The prefix data:image/[format];base64, must not be inputted  |
-| callback | required  | Callback | Used to gain result from the function. Would return a string. Example below |
+| Parameters | Required | Type   | Description                                                                                 |
+| ---------- | -------- | ------ | ------------------------------------------------------------------------------------------- |
+| base64     | required | string | the base64 string of the image. The prefix data:image/[format];base64, must not be inputted |
 
 Code example:
 
 ```tsx
-RNBase64GrayscaleModule.base64tobinaryString(
-           image,
-           (binaryString: String) => {
-            console.log(binaryString)
-           // can use setState or any other method here
-          }
-        )
+const binaryImage = async () => {
+  const resultBinaryImage =
+    await RNBase64GrayscaleModule.base64GrayscaletobinaryImage(greyscaleImage)
+}
 ```
 
 ## Full Example of Working Code
 
 The full example of working code can be seen in the example folder however u can also see it here:
 
-Image used here is 
+Image used here is
 
-![https://cdn.britannica.com/45/5645-050-B9EC0205/head-treasure-flower-disk-flowers-inflorescence-ray.jpg](https://cdn.britannica.com/45/5645-050-B9EC0205/head-treasure-flower-disk-flowers-inflorescence-ray.jpg)
+![Untitled](react-native-base64grayscale%20b7b76cb5f9cb446ab1bf9a26fef3edee/Untitled.png)
 
 The image width and height here 977 x 663, you can check the picture from here
 
@@ -130,3 +119,5 @@ const App = () => {
 
 export default App
 ```
+
+Note: To see the BinaryArt/ BinaryImage better it’s better to export it to a text file using react native fs liba
