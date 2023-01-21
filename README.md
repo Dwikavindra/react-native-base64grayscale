@@ -72,7 +72,7 @@ The image width and height here 977 x 663, you can check the picture from here
 
 For this image I converted it to base64 using tools available online such as
 
-[Base64 Image Encoder - Convert any image file or URL online (elmah.io)](https://elmah.io/tools/base64-image-encoder/) and then put it in the image constant. However if you are planning to use an image picker, the width, height, and base64 data is usually available depending on the package you are using.
+[Base64 Image Encoder - Convert any image file or URL online (elmah.io)](https://elmah.io/tools/base64-image-encoder/) and then put it in the image constant. 
 
 ```tsx
 import React, { useEffect, useState } from 'react'
