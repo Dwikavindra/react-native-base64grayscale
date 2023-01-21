@@ -64,7 +64,7 @@ The full example of working code can be seen in the example folder however u can
 
 Image used here is
 
-![Untitled](react-native-base64grayscale%20b7b76cb5f9cb446ab1bf9a26fef3edee/Untitled.png)
+![image](https://user-images.githubusercontent.com/71365618/213890200-2f06ab2f-5a1f-4347-be37-456433badaf0.png)
 
 The image width and height here 977 x 663, you can check the picture from here
 
@@ -85,18 +85,24 @@ const App = () => {
 
   const [image1, setImage1] = useState<String>('')
   useEffect(() => {
-    RNBase64GrayscaleModule.base64Coloredtobase64Grayscale(
-      image,
-      977, // this value. is
-      663,
-      (encoded: String) => {
-        setImage1(encoded)
+    const binaryImage = async () => {
+      try {
+        const greyscaleImage =
+          await RNBase64GrayscaleModule.base64Coloredtobase64Grayscale(image)
+        setImage1(greyscaleImage)
+        const resultBinaryImage =
+          await RNBase64GrayscaleModule.base64GrayscaletobinaryImage(
+            greyscaleImage
+          )
+        console.log(resultBinaryImage)
+      } catch (error) {
+        console.log(error)
       }
-    )
+    }
+    binaryImage()
   })
   return (
     <View>
-      <Counter></Counter>
       <Image
         source={{ uri: `data:jpeg;base64,` + image }}
         style={{
